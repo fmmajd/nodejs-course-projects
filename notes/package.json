@@ -1,0 +1,12 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "a simple notes app with nodejs for beginners!",
+  "main": "app.js",
+  "author": "Fatemeh Majd",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}
