@@ -4,26 +4,26 @@ const fs = require('fs');
 const os = require('os');
 
 const _ = require('lodash');
+const yargs = require('yargs');
 
-// const notes = require('./notes');
+const notes = require('./notes');
 
 // let user_info = os.userInfo();
 // fs.appendFileSync('greetings.txt', `Hello ${user_info.username} !`);
 // console.dir(user_info);
 
-console.log(process.argv);
-let args = _.drop(process.argv, 2);
-console.log(args);
+let args = yargs.argv;
 
-let command = args[0];
+let command = args._[0];
 console.log(`Command: ${command}`);
 
 switch (command) {
 	case 'add':
 		console.log('adding a new note');
+		notes.addNote(args.title, args.body);
 		break;
 	case 'remove':
-		console.log('removeing a note');
+		console.log('removing a note');
 		break;
 	case 'list':
 		console.log('listing all notes');
