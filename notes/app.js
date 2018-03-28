@@ -19,17 +19,16 @@ console.log(`Command: ${command}`);
 
 switch (command) {
 	case "add":
-		console.log("adding a new note");
-		notes.addNote(args.title, args.body);
+		notes.add(args.title, args.body);
 		break;
 	case "remove":
-		console.log("removing a note");
+		notes.remove(args.title);
 		break;
 	case "list":
-		console.log("listing all notes");
+		notes.list();
 		break;
 	case "read":
-		console.log("fetching a note");
+		notes.fetch(args.title);
 		break;
 	default:
 		console.log("command not recognized");
