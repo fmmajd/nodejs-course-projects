@@ -12,7 +12,7 @@
 			4,
 			"tab",
 			{
-				"SwitchCase": 3
+				"SwitchCase": 1
 			}
 		],
 		"linebreak-style": ["error", "unix"],
