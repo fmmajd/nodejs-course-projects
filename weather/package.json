@@ -1,0 +1,8 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "weather async sample",
+  "main": "app.js",
+  "author": "Fatemeh Majd",
+  "license": "MIT"
+}
