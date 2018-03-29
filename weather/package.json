@@ -6,6 +6,7 @@
   "author": "Fatemeh Majd",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.85.0"
+    "request": "^2.85.0",
+    "yargs": "^11.0.0"
   }
 }
