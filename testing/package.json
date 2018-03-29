@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"author": "Fatemeh Majd",
 	"scripts": {
-		"test": "mocha **/*.test.js"
+		"test": "mocha **/*.test.js",
+		"test-watch": "nodemon --exec \"yarn test\""
 	},
 	"dependencies": {},
 	"devDependencies": {
