@@ -5,7 +5,7 @@ let geocodeAddress = (address, callback) => {
 	let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
 		address
 	)}&key=${api_key}`;
-	console.log(`url: ${url}`);
+	// console.log(`url: ${url}`);
 	request(
 		{
 			url,
@@ -21,7 +21,7 @@ let geocodeAddress = (address, callback) => {
 				let { lat, lng } = location;
 				console.log(`lat: ${lat}`);
 				console.log(`lng: ${lng}`);
-				callback(undefined, location);
+				callback(undefined, { location });
 			}
 		}
 	);
