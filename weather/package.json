@@ -4,5 +4,8 @@
   "description": "weather async sample",
   "main": "app.js",
   "author": "Fatemeh Majd",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.85.0"
+  }
 }
