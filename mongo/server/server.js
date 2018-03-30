@@ -1,17 +1,29 @@
-const { mongoose } = require("./db/mongoose");
+// const { mongoose } = require("./db/mongoose");
+let express = require("express");
+let bodyParser = require("body-parser");
 
-const { User, Todo } = require("./models");
+const { Todo } = require("./models");
 
-let new_todo = new Todo({
-	text: "clean the room"
+let app = express();
+
+// middleware
+app.use(bodyParser.json());
+
+app.post("/todos", (req, res) => {
+	let newTodo = new Todo({
+		text: req.body.text
+	});
+
+	newTodo.save().then(
+		doc => {
+			res.send(doc);
+		},
+		err => {
+			res.status(400).send(err);
+		}
+	);
 });
 
-new_todo.save().then(
-	doc => {
-		console.log("saved");
-		console.log(doc);
-	},
-	err => {
-		console.log("error");
-	}
-);
+app.listen(1372, () => {
+	console.log("started on port 1372.");
+});
