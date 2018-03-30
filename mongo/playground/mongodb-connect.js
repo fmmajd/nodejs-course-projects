@@ -1,4 +1,4 @@
-const MongoClient = require("mongodb");
+const { MongoClient, ObjectID } = require("mongodb");
 
 MongoClient.connect("mongodb://localhost", (err, client) => {
 	if (err) {
@@ -8,30 +8,33 @@ MongoClient.connect("mongodb://localhost", (err, client) => {
 
 	const db = client.db("TodoApp");
 
-	db.collection("Todos").insertOne(
-		{
-			title: "first title here",
-			text: "do grocery"
-		},
-		(err, res) => {
-			if (err) {
-				return console.log("unable to insert to-do", err);
-			}
-			console.log(JSON.stringify(res.ops, undefined, 2));
-		}
-	);
+	// add a To-Do
+	// db.collection("Todos").insertOne(
+	// 	{
+	// 		title: "first title here",
+	// 		text: "do grocery"
+	// 	},
+	// 	(err, res) => {
+	// 		if (err) {
+	// 			return console.log("unable to insert to-do", err);
+	// 		}
+	// 		console.log(JSON.stringify(res.ops, undefined, 2));
+	// 	}
+	// );
 
+	// add a user
 	db.collection("Users").insertOne(
 		{
-			name: "Fatemeh",
+			name: "Majd",
 			age: 24,
-			location: "Tehran"
+			location: "Chaloos"
 		},
 		(err, res) => {
 			if (err) {
 				return console.log("unable to insert user", err);
 			}
-			console.log(JSON.stringify(res.ops, undefined, 2));
+			// console.log(JSON.stringify(res.ops, undefined, 2));
+			console.log(res.ops[0]._id.getTimestamp());
 		}
 	);
 
