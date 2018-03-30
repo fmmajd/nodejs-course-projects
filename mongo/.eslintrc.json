@@ -16,6 +16,7 @@
 	},
 	"globals": {
 		"require": false,
-		"global": false
+		"global": false,
+		"module": false
 	}
 }
