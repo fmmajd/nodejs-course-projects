@@ -1,0 +1,10 @@
+{
+  "name": "mongo",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Fatemeh Majd",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.0.5"
+  }
+}
