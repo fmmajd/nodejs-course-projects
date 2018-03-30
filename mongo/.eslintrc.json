@@ -17,6 +17,9 @@
 	"globals": {
 		"require": false,
 		"global": false,
-		"module": false
+		"module": false,
+		"describe": false,
+		"it": false,
+		"beforeEach": false
 	}
 }

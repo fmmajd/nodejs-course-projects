@@ -1,4 +1,4 @@
-// const { mongoose } = require("./db/mongoose");
+const { mongoose } = require("./db/mongoose");
 let express = require("express");
 let bodyParser = require("body-parser");
 
@@ -16,7 +16,7 @@ app.post("/todos", (req, res) => {
 
 	newTodo.save().then(
 		doc => {
-			res.send(doc);
+			res.status(201).send(doc);
 		},
 		err => {
 			res.status(400).send(err);
@@ -24,6 +24,17 @@ app.post("/todos", (req, res) => {
 	);
 });
 
-app.listen(1372, () => {
-	console.log("started on port 1372.");
+app.delete("/todos", (req, res) => {
+	Todo.remove({}).then(data => {
+		res.send(data);
+	});
 });
+
+let port = 1372;
+app.listen(port, () => {
+	console.log(`started on port ${port}.`);
+});
+
+module.exports = {
+	app
+};
