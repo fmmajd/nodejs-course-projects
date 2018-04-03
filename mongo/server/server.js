@@ -24,11 +24,32 @@ app.post("/todos", (req, res) => {
 	);
 });
 
-app.delete("/todos", (req, res) => {
-	Todo.remove({}).then(data => {
-		res.send(data);
-	});
+app.get("/todos", (req, res) => {
+	console.log("here honey");
+	Todo.find().then(
+		todos => {
+			console.log(todos);
+			res.send({ todos });
+		},
+		err => {
+			res.status(400).send(err);
+		}
+	);
 });
+
+// app.delete("/todos", (req, res) => {
+// 	console.log("here honey");
+// 	Todo.remove({}).then(
+// 		todos => {
+// 			let doc = { todos };
+// 			console.log(doc);
+// 			res.send({ todos });
+// 		},
+// 		err => {
+// 			res.status(400).send(err);
+// 		}
+// 	);
+// });
 
 let port = 1372;
 app.listen(port, () => {
