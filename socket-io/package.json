@@ -1,0 +1,10 @@
+{
+  "name": "socket-io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "client": "nodemon client/server/server.js",
+    "client-once": "node client/server/server.js"
+  }
+}
