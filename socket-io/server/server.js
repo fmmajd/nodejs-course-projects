@@ -7,8 +7,10 @@ const publicPath = path.join(__dirname, '../public')
 const express = require('express')
 const app = express()
 
+const port = process.env.PORT || 3001;
+
 app.use(express.static(publicPath));
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(port, () => console.log(`app is listening on port ${port}!`))
