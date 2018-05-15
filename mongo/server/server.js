@@ -1,8 +1,9 @@
 const { mongoose } = require("./db/mongoose");
 let express = require("express");
 let bodyParser = require("body-parser");
+let _ = require("lodash");
 
-const { Todo } = require("./models");
+const { Todo, User } = require("./models");
 
 let app = express();
 
@@ -35,6 +36,21 @@ app.get("/todos", (req, res) => {
 			res.status(400).send(err);
 		}
 	);
+});
+
+app.post("/users", (req, res) => {
+	let body = _.pick(req.body, ["email", "password", "name"]);
+
+	let newUser = new User(body);
+
+	newUser
+		.save()
+		.then(user => {
+			res.status(201).send(user);
+		})
+		.catch(err => {
+			res.status(400).send(err);
+		});
 });
 
 // app.delete("/todos", (req, res) => {
